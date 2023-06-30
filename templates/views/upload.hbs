@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Uploading</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            background-color: orange;
+        }
+
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .upload-box,
+        .uploaded-images-box {
+            background-color: black;
+            padding: 20px;
+            border-radius: 5px;
+            color: white;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .upload-box label,
+        .uploaded-images-box h1,
+        .uploaded-images-box h5,
+        .uploaded-images-box p {
+            color: white;
+        }
+
+        .homepage-link {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            color: black;
+        }
+
+        .homepage-link:hover {
+            color: blue;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <a class="homepage-link" href="/home?userId={{userId}}">Homepage</a>
+
+    <div class="container">
+        <div class="upload-box">
+            <h1>Upload Image</h1>
+            <hr>
+            <form action="/upload?userId={{userId}}" method="POST" enctype="multipart/form-data">
+                <div class="form-group">
+                    <label for="name">Image Title</label>
+                    <input type="text" class="form-control" id="name" placeholder="Name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="desc">Image Description</label>
+                    <textarea class="form-control" id="desc" name="desc" rows="2" placeholder="Description" required></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="image">Upload Image</label>
+                    <input type="file" class="form-control-file" id="image" name="image" required>
+                </div>
+                <div class="form-group">
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

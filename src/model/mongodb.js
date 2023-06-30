@@ -30,13 +30,16 @@ const regSchema = new mongoose.Schema({
 })
 
 const datSchema = new mongoose.Schema({
-    name : {
-        type:String,
-        required:true
+    name: String,
+    desc: String,
+    img: {
+      data: String,
+      contentType: String,
     },
-    file: {
-        data:Buffer,
-        contentType:String
+    fileName: String,
+    postedBy: { 
+      type: mongoose.Schema.Types.ObjectId,
+      ref: 'coll1'
     }
 })
 
