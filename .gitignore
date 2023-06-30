@@ -1,4 +1,5 @@
 node_modules
 uploads
+localStorage
 .env
 package-lock.json
