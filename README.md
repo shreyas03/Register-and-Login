@@ -18,3 +18,5 @@ Every time a user is redirected, their ID is sent as a URL parameter to increase
 The user can also navigate to the homepage or log out from any page in the application.
 
 When a user is logged out, the cookie is cleared of their unique token to avoid anyone stealing the token and using the user's identity for authentication.
+
+This project has been deployed at: https://post-w9o7.onrender.com
