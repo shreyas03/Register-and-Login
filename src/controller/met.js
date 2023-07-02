@@ -42,23 +42,28 @@ exports.createUser = async (req, res) => {
               data.pwd = undefined
             } else {
               res.send("Passwords do not match")
+              return;
             }
             
           }
          else{
           res.send("Username taken")
           console.log(e)
+          return;
         }
       }
       else {
         res.send("Email already exists!")
+        return;
       }
     } catch (err) {
       res.send("Internal Server Error!")
+      return;
     }
 
 
     res.render("login")
+    return;
 }
 exports.valUser = async (req, res) => {
   try{
